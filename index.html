@@ -118,9 +118,35 @@
       margin-right: 8px;
       font-size: 12px;
     }
+    /* Top navigation bar styles */
+    .topnav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #003366;
+      display: flex;
+      justify-content: flex-start;
+      z-index: 1000;
+    }
+    .topnav a {
+      color: #ffffff;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .topnav a:hover {
+      background-color: #ddd;
+      color: #000;
+    }
   </style>
 </head>
 <body>
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a href="links.html">Links</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
   <div class="sidebar">
     <div class="logo">
       <h1>ECFinder</h1>
