@@ -1,143 +1,225 @@
-/* Global Layout */
+/* ===============================
+   VARIABLES & GLOBAL STYLES
+================================= */
+:root {
+  --primary: #3367D6;
+  --bg: #ffffff;
+  --muted-bg: #f1f3f4;
+  --text: #202124;
+  --text-muted: #5f6368;
+  --border: #e0e0e0;
+  --sidebar-bg: #fafbfc;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #F5F9FF;
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-  }
-  .hidden {
-    display: none;
-  }
-  /* Top Navigation */
-  .topnav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #003366;
-    display: flex;
-    justify-content: flex-start;
-    z-index: 1000;
-  }
-  .topnav a {
-    color: #FFFFFF;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  .topnav a:hover {
-    background-color: #ddd;
-    color: #000;
-  }
-  /* Sidebar */
-  .sidebar {
-    width: 300px;
-    background: linear-gradient(to bottom, #D2EBFF, #E6F3FF);
-    padding: 20px;
-    overflow-y: auto;
-    box-sizing: border-box;
-    border-right: 1px solid #D0DFF0;
-  }
-  .logo {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .logo h1 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #003366;
-    margin: 0;
-  }
-  /* Sidebar Sections */
-  .section {
-    background: #D2EBFF;
-    border-radius: 16px;
-    padding: 10px 15px;
-    margin-bottom: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  }
-  .section h3 {
-    font-size: 15px;
-    font-weight: bold;
-    margin: 0 0 8px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    color: #003366;
-  }
-  /* Checkboxes */
-  .checkbox-group {
-    margin-top: 10px;
-  }
-  .checkbox-label {
-    display: block;
-    margin: 5px 0;
-    font-size: 14px;
-    color: #003366;
-  }
-  .checkbox-label input {
-    margin-right: 8px;
-  }
-  /* Main Content */
-  .content {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-    margin-left: 300px;
-  }
-  /* Search + Liked Toggle */
-  .search-only-container {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    background: #EAF4FF;
-    align-items: center;
-    flex-wrap: wrap;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  .search-only-container input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #C0D9F0;
-  }
-  .liked-toggle {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    background: white;
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  }
-  .liked-toggle input {
-    margin-right: 10px;
-  }
-  /* EC Cards */
-  .ec-card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background: #FFFFFF;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  }
-  .ec-card h3 {
-    margin-top: 0;
-  }
-  /* Tags */
-  .tags span {
-    display: inline-block;
-    background: #D2EBFF;
-    color: #003366;
-    padding: 4px 10px;
-    border-radius: 12px;
-    margin-right: 8px;
-    font-size: 12px;
-  }
-  
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===============================
+   TOP NAV
+================================= */
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.topnav a {
+  color: #ffffff;
+  margin-right: 24px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.topnav a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   LAYOUT CONTAINER
+================================= */
+.container {
+  display: flex;
+  width: 100%;
+  margin-top: 60px;
+}
+
+/* ===============================
+   SIDEBAR
+================================= */
+.sidebar {
+  width: 280px;
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  padding: 24px 20px;
+  overflow-y: auto;
+  height: calc(100vh - 60px);
+  box-sizing: border-box;
+}
+
+.logo h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* ===============================
+   SECTION HEADERS + CHECKBOXES
+================================= */
+.section {
+  margin-bottom: 24px;
+}
+
+.section h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.checkbox-group {
+  padding-top: 10px;
+}
+
+.checkbox-label {
+  display: block;
+  margin: 6px 0;
+  font-size: 14px;
+  color: var(--text);
+  transition: background 0.2s;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+.checkbox-label:hover {
+  background-color: var(--muted-bg);
+}
+
+.checkbox-label input {
+  margin-right: 8px;
+}
+
+/* ===============================
+   MAIN CONTENT
+================================= */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+  background: var(--bg);
+}
+
+/* ===============================
+   SEARCH CONTAINER
+================================= */
+.search-only-container {
+  display: flex;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--muted-bg);
+  border-radius: 12px;
+  align-items: center;
+  margin-bottom: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+
+.search-only-container input[type="text"] {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+/* ===============================
+   TOGGLE FOR LIKED ONLY
+================================= */
+.liked-toggle {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.liked-toggle input {
+  margin-right: 8px;
+}
+
+/* ===============================
+   EC CARDS
+================================= */
+.ec-card {
+  background: var(--muted-bg);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--border);
+}
+
+.ec-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.ec-card h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.ec-card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   TAGS
+================================= */
+.tags span {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin: 4px 6px 0 0;
+  font-size: 12px;
+}
