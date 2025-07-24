@@ -4,123 +4,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EC Finder</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Top Navigation -->
   <nav class="topnav">
     <a href="index.html">Home</a>
     <a href="links.html">Links</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <div class="sidebar">
-    <div class="logo">
-      <h1>ECFinder</h1>
-    </div>
-    <!-- Insert all sections here -->
-    <!-- Math/Science -->
-    <div class="section">
-      <h3 onclick="toggleSection(this)">Math/Science <span>▼</span></h3>
-      <div class="checkbox-group">
-        <label class="checkbox-label"><input type="checkbox" value="Mathematics"> Mathematics</label>
-        <label class="checkbox-label"><input type="checkbox" value="Statistics"> Statistics</label>
-        <label class="checkbox-label"><input type="checkbox" value="Physics"> Physics</label>
-        <label class="checkbox-label"><input type="checkbox" value="Chemistry"> Chemistry</label>
-        <label class="checkbox-label"><input type="checkbox" value="Biology"> Biology</label>
-        <label class="checkbox-label"><input type="checkbox" value="Applied Math"> Applied Math</label>
-        <label class="checkbox-label"><input type="checkbox" value="Neuroscience"> Neuroscience</label>
-        <label class="checkbox-label"><input type="checkbox" value="Genetics"> Genetics</label>
-        <!-- Add more Math/Science checkboxes here -->
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>ECFinder</h1>
       </div>
-    </div>
-    <!-- Engineering and Technology -->
-    <div class="section">
-      <h3 onclick="toggleSection(this)">Engineering & Tech <span>▼</span></h3>
-      <div class="checkbox-group">
-        <label class="checkbox-label"><input type="checkbox" value="Computer Science"> Computer Science</label>
-        <label class="checkbox-label"><input type="checkbox" value="Cybersecurity"> Cybersecurity</label>
-        <label class="checkbox-label"><input type="checkbox" value="Robotics"> Robotics</label>
-        <!-- Add more Eng/Tech checkboxes here -->
+
+      <!-- Section Groups -->
+      <section class="section">
+        <h3 onclick="toggleSection(this)">Math/Science <span>▼</span></h3>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" value="Mathematics"> Mathematics</label>
+          <label class="checkbox-label"><input type="checkbox" value="Statistics"> Statistics</label>
+          <label class="checkbox-label"><input type="checkbox" value="Physics"> Physics</label>
+          <label class="checkbox-label"><input type="checkbox" value="Chemistry"> Chemistry</label>
+          <label class="checkbox-label"><input type="checkbox" value="Biology"> Biology</label>
+          <label class="checkbox-label"><input type="checkbox" value="Applied Math"> Applied Math</label>
+          <label class="checkbox-label"><input type="checkbox" value="Neuroscience"> Neuroscience</label>
+          <label class="checkbox-label"><input type="checkbox" value="Genetics"> Genetics</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 onclick="toggleSection(this)">Engineering & Tech <span>▼</span></h3>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" value="Computer Science"> Computer Science</label>
+          <label class="checkbox-label"><input type="checkbox" value="Cybersecurity"> Cybersecurity</label>
+          <label class="checkbox-label"><input type="checkbox" value="Robotics"> Robotics</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 onclick="toggleSection(this)">Business/Social Sci <span>▼</span></h3>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" value="Economics"> Economics</label>
+          <label class="checkbox-label"><input type="checkbox" value="Finance"> Finance</label>
+          <label class="checkbox-label"><input type="checkbox" value="Political Science"> Political Science</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 onclick="toggleSection(this)">Arts/Humanities <span>▼</span></h3>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" value="Writing"> Writing</label>
+          <label class="checkbox-label"><input type="checkbox" value="Foreign Language"> Foreign Language</label>
+          <label class="checkbox-label"><input type="checkbox" value="History"> History</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 onclick="toggleSection(this)">Grade <span>▼</span></h3>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" value="Freshman"> Freshman</label>
+          <label class="checkbox-label"><input type="checkbox" value="Sophomore"> Sophomore</label>
+          <label class="checkbox-label"><input type="checkbox" value="Junior"> Junior</label>
+          <label class="checkbox-label"><input type="checkbox" value="Senior"> Senior</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 onclick="toggleSection(this)">Other <span>▼</span></h3>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" value="Virtual"> Virtual</label>
+          <label class="checkbox-label"><input type="checkbox" value="Free"> Free</label>
+          <label class="checkbox-label"><input type="checkbox" value="Summer"> Summer</label>
+          <label class="checkbox-label"><input type="checkbox" value="Paid"> Paid</label>
+          <label class="checkbox-label"><input type="checkbox" value="Internship"> Internship</label>
+          <label class="checkbox-label"><input type="checkbox" value="Competition"> Competition</label>
+          <label class="checkbox-label"><input type="checkbox" value="Community Service"> Community Service</label>
+          <label class="checkbox-label"><input type="checkbox" value="STEM"> STEM</label>
+          <label class="checkbox-label"><input type="checkbox" value="Research"> Research</label>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="search-only-container">
+        <input type="text" id="searchBox" placeholder="Search for Extracurriculars..." />
+        <label class="liked-toggle">
+          <input type="checkbox" id="likedOnly" />
+          Show Liked Ones Only
+        </label>
       </div>
-    </div>
-    <!-- Business/Social Sciences -->
-    <div class="section">
-      <h3 onclick="toggleSection(this)">Business/Social Sci <span>▼</span></h3>
-      <div class="checkbox-group">
-        <label class="checkbox-label"><input type="checkbox" value="Economics"> Economics</label>
-        <label class="checkbox-label"><input type="checkbox" value="Finance"> Finance</label>
-        <label class="checkbox-label"><input type="checkbox" value="Political Science"> Political Science</label>
-        <!-- Add more Biz/Social Science checkboxes here -->
-      </div>
-    </div>
-    <!-- Arts/Humanities -->
-    <div class="section">
-      <h3 onclick="toggleSection(this)">Arts/Humanities <span>▼</span></h3>
-      <div class="checkbox-group">
-        <label class="checkbox-label"><input type="checkbox" value="Writing"> Writing</label>
-        <label class="checkbox-label"><input type="checkbox" value="Foreign Language"> Foreign Language</label>
-        <label class="checkbox-label"><input type="checkbox" value="History"> History</label>
-        <!-- Add more Arts/Humanities checkboxes here -->
-      </div>
-    </div>
-    <!-- Grade -->
-    <div class="section">
-      <h3 onclick="toggleSection(this)">Grade <span>▼</span></h3>
-      <div class="checkbox-group">
-        <label class="checkbox-label"><input type="checkbox" value="Freshman"> Freshman</label>
-        <label class="checkbox-label"><input type="checkbox" value="Sophomore"> Sophomore</label>
-        <label class="checkbox-label"><input type="checkbox" value="Junior"> Junior</label>
-        <label class="checkbox-label"><input type="checkbox" value="Senior"> Senior</label>
-      </div>
-    </div>
-    <!-- Other -->
-    <div class="section">
-      <h3 onclick="toggleSection(this)">Other <span>▼</span></h3>
-      <div class="checkbox-group">
-        <label class="checkbox-label"><input type="checkbox" value="Virtual"> Virtual</label>
-        <label class="checkbox-label"><input type="checkbox" value="Free"> Free</label>
-        <label class="checkbox-label"><input type="checkbox" value="Summer"> Summer</label>
-        <label class="checkbox-label"><input type="checkbox" value="Paid"> Paid</label>
-        <label class="checkbox-label"><input type="checkbox" value="Internship"> Internship</label>
-        <label class="checkbox-label"><input type="checkbox" value="Competition"> Competition</label>
-        <label class="checkbox-label"><input type="checkbox" value="Community Service"> Community Service</label>
-        <label class="checkbox-label"><input type="checkbox" value="STEM"> STEM</label>
-        <label class="checkbox-label"><input type="checkbox" value="Research"> Research</label>
-      </div>
-    </div>
+
+      <section id="ecContainer">
+        <div class="ec-card" data-tags="Mathematics Virtual Free">
+          <h3>Mu Alpha Theta</h3>
+          <p>A national math honor society with competitions and leadership roles.</p>
+          <div class="tags">
+            <span>Mathematics</span><span>Virtual</span><span>Free</span>
+          </div>
+        </div>
+
+        <div class="ec-card" data-tags="Mathematics Summer Paid">
+          <h3>Ross Mathematics Program</h3>
+          <p>Intensive summer program focused on number theory and proofs.</p>
+          <div class="tags">
+            <span>Mathematics</span><span>Summer</span><span>Paid</span>
+          </div>
+        </div>
+
+        <div class="ec-card" data-tags="Computer Science Virtual Free">
+          <h3>ACSL</h3>
+          <p>American Computer Science League – a coding competition for students.</p>
+          <div class="tags">
+            <span>Virtual</span><span>Free</span><span>Computer Science</span>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
-  <div class="content">
-    <div class="search-only-container">
-      <input type="text" id="searchBox" placeholder="Search for Extracurriculars...">
-      <label class="liked-toggle">
-        <input type="checkbox" id="likedOnly">
-        Show Liked Ones Only
-      </label>
-    </div>
-    <div id="ecContainer">
-      <div class="ec-card" data-tags="Mathematics Virtual Free">
-        <h3>Mu Alpha Theta</h3>
-        <p>A national math honor society with competitions and leadership roles.</p>
-        <div class="tags">
-          <span>Mathematics</span><span>Virtual</span><span>Free</span>
-        </div>
-      </div>
-      <div class="ec-card" data-tags="Mathematics Summer Paid">
-        <h3>Ross Mathematics Program</h3>
-        <p>Intensive summer program focused on number theory and proofs.</p>
-        <div class="tags">
-          <span>Mathematics</span><span>Summer</span><span>Paid</span>
-        </div>
-      </div>
-      <div class="ec-card" data-tags="Computer Science Virtual Free">
-        <h3>ACSL</h3>
-        <p>American Computer Science League – a coding competition for students.</p>
-        <div class="tags">
-          <span>Virtual</span><span>Free</span><span>Computer Science</span>
-        </div>
-      </div>
-    </div>
-  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
