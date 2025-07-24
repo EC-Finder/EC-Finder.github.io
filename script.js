@@ -47,3 +47,11 @@ document.querySelectorAll('.like-btn').forEach(button => {
 checkboxes.forEach(cb => cb.addEventListener('change', filterECs));
 searchBox.addEventListener('input', filterECs);
 likedToggle.addEventListener('change', filterECs);
+// Make cards clickable unless clicking the like button
+document.querySelectorAll('.ec-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.classList.contains('like-btn')) return; // skip if clicking heart
+    const url = card.getAttribute('data-url');
+    if (url) window.open(url, '_blank');
+  });
+});
