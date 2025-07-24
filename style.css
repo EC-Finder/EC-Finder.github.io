@@ -248,7 +248,7 @@ a {
 .like-btn:hover {
   color: #e25555;
 }
-.ec-card {
+.ec-card:hover {
   cursor: pointer;
 }
 
