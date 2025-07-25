@@ -32,8 +32,7 @@ function filterECs() {
 
     const matchesSearch = content.includes(searchTerm);
     const matchesTags = selectedTags.every(tag => tags.includes(tag));
-    const matchesMonths = selectedMonths.length === 0 || selectedMonths.some(month => tags.includes(month));
-
+    const matchesMonths = selectedMonths.length === 0 || tags.includes('year-round') || selectedMonths.some(month => tags.includes(month));
     const shouldDisplay = matchesSearch && matchesTags && matchesMonths && (!likedOnly || isLiked);
 
     card.style.display = shouldDisplay ? '' : 'none';
