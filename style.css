@@ -197,10 +197,11 @@ a:hover, a:focus {
   background: var(--bg);
   max-width: calc(100% - 280px);
   margin-left: 280px;
+
   display: flex;
-  flex-wrap: wrap;       /* Allow multiple cards per row */
-  gap: 24px 32px;        /* Vertical and horizontal spacing */
-  justify-content: flex-start; /* Align cards to start */
+  flex-wrap: wrap;
+  gap: 24px 32px;
+  justify-content: flex-start;
 }
 
 /* ===============================
@@ -239,8 +240,9 @@ a:hover, a:focus {
   border: 1px solid var(--border);
   cursor: pointer;
 
-  flex: 1 1 calc(33.33% - 32px);  /* 3 cards per row with gap */
-  min-width: 280px;                /* Minimum width to keep card readable */
+  flex: 1 1 calc(33.33% - 32px);
+  max-width: 350px;
+  min-width: 280px;
   box-sizing: border-box;
 }
 
@@ -252,14 +254,19 @@ a:hover, a:focus {
 /* ===============================
    TAGS
 ================================= */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+
 .tags span {
-  display: inline-block;
   background: var(--primary);
   color: #fff;
   padding: 4px 10px;
   border-radius: 20px;
-  margin: 4px 6px 0 0;
   font-size: 12px;
+  white-space: nowrap;
 }
 
 /* ===============================
