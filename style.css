@@ -3,32 +3,47 @@
 ================================= */
 :root {
   --primary: #3367D6;
+  --primary-light: #4a81e8;
+  --primary-dark: #274a8d;
   --bg: #ffffff;
-  --muted-bg: #f1f3f4;
+  --muted-bg: #f9fbff;
   --text: #202124;
-  --text-muted: #5f6368;
-  --border: #e0e0e0;
-  --sidebar-bg: #fafbfc;
+  --text-muted: #6a737d;
+  --border: #e2e8f0;
+  --sidebar-bg: #f7f9fc;
+  --shadow-light: rgba(51, 103, 214, 0.15);
+  --shadow-dark: rgba(39, 74, 141, 0.2);
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   margin: 0;
   padding: 0;
   background: var(--bg);
   color: var(--text);
-  display: flex;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
+/* Link Styles */
 a {
+  color: var(--primary);
   text-decoration: none;
-  color: inherit;
+  transition: color 0.3s ease;
 }
 
-.hidden {
-  display: none;
+a:hover, a:focus {
+  color: var(--primary-dark);
+  outline: none;
+  text-decoration: underline;
 }
 
 /* ===============================
@@ -39,23 +54,29 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 64px;
   background-color: var(--primary);
   display: flex;
   align-items: center;
-  padding: 0 20px;
-  z-index: 1000;
+  padding: 0 32px;
+  z-index: 10000;
+  box-shadow: 0 2px 8px var(--shadow-light);
+  font-weight: 600;
 }
 
 .topnav a {
   color: #ffffff;
-  margin-right: 24px;
-  font-size: 16px;
-  font-weight: 500;
+  margin-right: 32px;
+  font-size: 17px;
+  letter-spacing: 0.03em;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.topnav a:hover {
-  text-decoration: underline;
+.topnav a.active, .topnav a:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 0 8px var(--shadow-dark);
 }
 
 /* ===============================
@@ -64,7 +85,8 @@ a {
 .container {
   display: flex;
   width: 100%;
-  margin-top: 60px;
+  margin-top: 64px;
+  min-height: calc(100vh - 64px);
 }
 
 /* ===============================
@@ -74,59 +96,72 @@ a {
   width: 280px;
   background-color: var(--sidebar-bg);
   border-right: 1px solid var(--border);
-  padding: 24px 20px;
+  padding: 32px 24px;
   overflow-y: auto;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 64px);
   box-sizing: border-box;
+  box-shadow: inset -5px 0 8px -6px var(--shadow-light);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 .logo h1 {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 800;
   color: var(--primary);
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  letter-spacing: 0.1em;
 }
 
 /* ===============================
    SECTION HEADERS + CHECKBOXES
 ================================= */
 .section {
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 
 .section h3 {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   color: var(--text);
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border);
+  user-select: none;
 }
 
 .checkbox-group {
-  padding-top: 10px;
+  padding-top: 12px;
 }
 
 .checkbox-label {
-  display: block;
-  margin: 6px 0;
-  font-size: 14px;
-  color: var(--text);
-  transition: background 0.2s;
-  padding: 4px 6px;
-  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 15px;
+  color: var(--text-muted);
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  cursor: pointer;
 }
 
 .checkbox-label:hover {
-  background-color: var(--muted-bg);
+  background-color: var(--primary-light);
+  color: #fff;
 }
 
 .checkbox-label input {
-  margin-right: 8px;
+  margin-right: 12px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--primary);
 }
 
 /* ===============================
@@ -135,269 +170,268 @@ a {
 .content {
   flex: 1;
   overflow-y: auto;
-  padding: 30px;
+  padding: 40px 60px;
   background: var(--bg);
+  max-width: 1300px;
+  margin: 0 auto 60px auto;
 }
 
 /* ===============================
-   SEARCH CONTAINER
+   HERO SECTION
 ================================= */
-.search-only-container {
-  display: flex;
-  gap: 16px;
-  padding: 16px 20px;
-  background: var(--muted-bg);
-  border-radius: 12px;
-  align-items: center;
-  margin-bottom: 30px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  flex-wrap: wrap;
-}
-
-.search-only-container input[type="text"] {
-  flex: 1;
-  padding: 10px 14px;
-  font-size: 15px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: white;
-}
-
-/* ===============================
-   TOGGLE FOR LIKED ONLY
-================================= */
-.liked-toggle {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  background: white;
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-}
-
-.liked-toggle input {
-  margin-right: 8px;
-}
-
-/* ===============================
-   EC CARDS
-================================= */
-.ec-card {
-  background: var(--muted-bg);
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid var(--border);
-}
-
-.ec-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-.ec-card h3 {
-  margin-top: 0;
-  font-size: 18px;
-  color: var(--text);
-}
-
-.ec-card p {
-  color: var(--text-muted);
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-/* ===============================
-   TAGS
-================================= */
-.tags span {
-  display: inline-block;
-  background: var(--primary);
-  color: #fff;
-  padding: 4px 10px;
-  border-radius: 20px;
-  margin: 4px 6px 0 0;
-  font-size: 12px;
-}
-/* ===============================
-   CARD HEADER + LIKE BUTTON
-================================= */
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.like-btn {
-  font-size: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #ccc;
-  transition: color 0.2s ease;
-}
-
-.like-btn.liked {
-  color: #e25555;
-}
-
-.like-btn:hover {
-  color: #e25555;
-}
-.ec-card:hover {
-  cursor: pointer;
-}
-/* Container for the hero section */
 .hero {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 40px;
-  background: linear-gradient(120deg, #e0f2ff, #ffffff);
-  border-radius: 12px;
+  padding: 80px 20px 60px;
+  background: linear-gradient(120deg, #e6f0ff, #ffffff);
+  border-radius: 16px;
   margin-bottom: 60px;
-  gap: 40px;
+  gap: 48px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 8px 24px var(--shadow-light);
+  transition: box-shadow 0.3s ease;
 }
 
-/* Text part of hero */
+.hero:hover {
+  box-shadow: 0 12px 32px var(--shadow-dark);
+}
+
 .hero-text {
-  flex: 1 1 450px;
-  max-width: 600px;
-  padding-right: 30px;
+  flex: 1 1 460px;
+  max-width: 650px;
+  padding-right: 40px;
 }
 
 .hero-text h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 3.5rem;
+  margin-bottom: 24px;
   color: var(--primary);
-  line-height: 1.2;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.05);
 }
 
 .hero-text p {
-  font-size: 1.3rem;
-  margin-bottom: 35px;
+  font-size: 1.35rem;
+  margin-bottom: 38px;
   color: var(--text-muted);
-  max-width: 500px;
-  line-height: 1.5;
+  max-width: 540px;
+  line-height: 1.55;
 }
 
-/* Button */
+.hero-image img {
+  max-width: 350px;
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 12px 32px var(--shadow-light);
+  transition: transform 0.4s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 48px var(--shadow-dark);
+}
+
+/* ===============================
+   BUTTONS
+================================= */
 .btn-primary {
-  background: var(--primary);
+  background: linear-gradient(90deg, #3367d6, #2b58b3);
   color: white;
-  padding: 14px 36px;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 1.1rem;
+  padding: 16px 42px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1.15rem;
   cursor: pointer;
   border: none;
-  transition: background 0.3s ease;
+  transition: background 0.4s ease, box-shadow 0.3s ease;
   text-decoration: none;
   display: inline-block;
-  box-shadow: 0 4px 8px rgba(51, 103, 214, 0.4);
+  box-shadow: 0 6px 14px var(--primary-light);
 }
 
 .btn-primary:hover {
-  background: #274a8d;
-  box-shadow: 0 6px 12px rgba(39, 74, 141, 0.7);
+  background: linear-gradient(90deg, #274a8d, #1e3a6b);
+  box-shadow: 0 10px 24px var(--primary-dark);
 }
 
-/* Features section */
+/* ===============================
+   FEATURES SECTION
+================================= */
 .features {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 48px;
   justify-content: center;
-  max-width: 1000px;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .feature-card {
   flex: 1 1 280px;
   background: var(--muted-bg);
-  border-radius: 12px;
-  padding: 30px 25px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 6px 24px rgba(51, 103, 214, 0.1);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: default;
 }
 
 .feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: translateY(-12px);
+  box-shadow: 0 14px 40px rgba(39, 74, 141, 0.18);
 }
 
 .feature-card img {
-  max-width: 90px;
-  margin-bottom: 24px;
+  max-width: 100px;
+  margin-bottom: 28px;
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.08));
 }
 
 .feature-card h3 {
-  margin-bottom: 14px;
+  margin-bottom: 18px;
   color: var(--primary);
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-weight: 900;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .feature-card p {
   color: var(--text-muted);
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
-/* About section */
+/* ===============================
+   ABOUT SECTION
+================================= */
 .about-section {
-  background: #e8f1ff;
-  border-radius: 12px;
-  padding: 50px 40px;
+  background: #e9f2ff;
+  border-radius: 20px;
+  padding: 60px 50px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
   justify-content: center;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 60px;
+  box-shadow: 0 8px 32px rgba(51, 103, 214, 0.15);
 }
 
 .about-logo {
-  flex: 0 0 160px;
-  max-width: 160px;
+  flex: 0 0 180px;
+  max-width: 180px;
   border: 3px solid var(--primary);
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 20px;
+  padding: 28px;
   text-align: center;
-  font-family: monospace, monospace;
-  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
   color: var(--primary);
   user-select: none;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  box-shadow: inset 0 0 15px rgba(51, 103, 214, 0.2);
 }
 
 .about-text {
-  flex: 1 1 400px;
+  flex: 1 1 450px;
   max-width: 700px;
 }
 
 .about-text h2 {
   color: var(--primary);
-  margin-bottom: 16px;
-  font-size: 1.8rem;
+  margin-bottom: 24px;
+  font-size: 2.3rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: none;
 }
 
 .about-text p {
   color: var(--text-muted);
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+================================= */
+@media (max-width: 1100px) {
+  .content {
+    padding: 30px 40px;
+  }
+  .hero {
+    padding: 60px 20px 40px;
+    gap: 32px;
+  }
+  .hero-text {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding-right: 0;
+  }
+  .hero-image img {
+    max-width: 90vw;
+    margin: 0 auto;
+    display: block;
+  }
+  .features {
+    max-width: 90vw;
+    gap: 32px;
+  }
+  .feature-card {
+    flex: 1 1 45%;
+    padding: 28px 24px;
+  }
+  .about-section {
+    max-width: 90vw;
+    padding: 40px 20px;
+    gap: 32px;
+  }
+  .about-text {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .topnav a {
+    margin-right: 16px;
+    font-size: 15px;
+  }
+  .features {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .feature-card {
+    flex: 1 1 100%;
+  }
+  .about-section {
+    flex-direction: column;
+    padding: 30px 16px;
+  }
+  .about-logo {
+    margin: 0 auto;
+  }
+  .about-text {
+    text-align: center;
+  }
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+  .about-text p {
+    font-size: 1rem;
+  }
 }
