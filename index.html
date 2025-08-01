@@ -11,17 +11,17 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center; /* Center horizontally since no image */
       padding: 40px 20px;
       background: linear-gradient(120deg, #e0f2ff, #ffffff);
       border-radius: 12px;
       margin-bottom: 40px;
+      text-align: center; /* Center text */
     }
     .hero-text {
-      flex: 1 1 400px;
-      max-width: 600px;
-      padding-right: 20px;
-      min-width: 280px;
+      flex: 1 1 600px;
+      max-width: 700px;
+      padding: 0 20px;
     }
     .hero-text h1 {
       font-size: 2.8rem;
@@ -49,17 +49,7 @@
     .btn-primary:hover {
       background: #274a8d;
     }
-    .hero-image {
-      flex: 1 1 300px;
-      max-width: 320px;
-      margin-left: 20px;
-      text-align: center;
-    }
-    .hero-image img {
-      max-width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
+
     .features {
       display: flex;
       flex-wrap: wrap;
@@ -110,6 +100,8 @@
       font-weight: 700;
       color: var(--primary);
       user-select: none;
+      font-size: 1.2rem;
+      line-height: 1.4;
     }
     .about-text {
       flex: 1 1 350px;
@@ -130,14 +122,10 @@
       .hero {
         flex-direction: column;
         padding: 30px 15px;
+        text-align: center;
       }
       .hero-text {
-        padding-right: 0;
-        max-width: 100%;
-      }
-      .hero-image {
-        margin-left: 0;
-        margin-top: 30px;
+        padding: 0;
         max-width: 100%;
       }
       .features {
@@ -175,10 +163,6 @@
         <p>Discover activities custom tailored to your interests through our extracurricular database to help you make the most out of high school.</p>
         <a href="links.html" class="btn-primary" role="button" aria-label="Get Started exploring extracurriculars">Get Started</a>
       </div>
-      <div class="hero-image">
-        <!-- Replace with your own image or mockup -->
-        <img src="https://i.imgur.com/8p5YQeF.png" alt="Preview screenshot of EC Finder platform" />
-      </div>
     </section>
 
     <!-- Features section -->
@@ -201,12 +185,12 @@
     </section>
 
     <!-- About section -->
-    <section class="about-section" aria-label="About EC Finder and Project Empower">
-      <div class="about-logo" aria-hidden="true">Project:<br>Empower</div>
+    <section class="about-section" aria-label="About EC Finder">
+      <div class="about-logo" aria-hidden="true">EC<br>Finder</div>
       <div class="about-text">
         <h2>About Us</h2>
-        <p>EC Finder is a proud product of Project: Empower — a nonprofit dedicated to creating software that empowers students worldwide. We’re passionate about helping high school students find meaningful extracurriculars to boost skills and college applications.</p>
-        <a href="about.html" class="btn-primary" role="button" aria-label="Learn more about Project Empower">Learn More</a>
+        <p>EC Finder is a nonprofit dedicated to helping high school students find meaningful extracurriculars to boost skills and college applications.</p>
+        <a href="about.html" class="btn-primary" role="button" aria-label="Learn more about EC Finder">Learn More</a>
       </div>
     </section>
 
