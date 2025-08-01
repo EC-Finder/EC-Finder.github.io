@@ -215,16 +215,24 @@ a:hover, a:focus {
   align-items: center;
   margin-bottom: 30px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* prevent wrapping */
+  justify-content: center; /* center horizontally */
 }
 
 .search-only-container input[type="text"] {
-  flex: 1;
-  padding: 10px 14px;
-  font-size: 15px;
+  width: 500px;       /* fixed width */
+  max-width: 100%;    /* won't exceed container */
+  min-width: 400px;   /* won't shrink too small */
+  padding: 14px 20px;
+  font-size: 18px;
   border-radius: 10px;
   border: 1px solid var(--border);
   background: white;
+  box-sizing: border-box;
+}
+.search-only-container {
+  width: 520px; /* or desired width */
+  margin: 0 auto 30px auto; /* center horizontally */
 }
 
 /* ===============================
