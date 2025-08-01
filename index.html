@@ -21,6 +21,7 @@
       flex: 1 1 400px;
       max-width: 600px;
       padding-right: 20px;
+      min-width: 280px;
     }
     .hero-text h1 {
       font-size: 2.8rem;
@@ -47,6 +48,17 @@
     }
     .btn-primary:hover {
       background: #274a8d;
+    }
+    .hero-image {
+      flex: 1 1 300px;
+      max-width: 320px;
+      margin-left: 20px;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
     .features {
       display: flex;
@@ -112,11 +124,43 @@
       font-size: 1rem;
       margin-bottom: 20px;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 800px) {
+      .hero {
+        flex-direction: column;
+        padding: 30px 15px;
+      }
+      .hero-text {
+        padding-right: 0;
+        max-width: 100%;
+      }
+      .hero-image {
+        margin-left: 0;
+        margin-top: 30px;
+        max-width: 100%;
+      }
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+      .feature-card {
+        max-width: 90%;
+      }
+      .about-section {
+        flex-direction: column;
+        padding: 30px 15px;
+      }
+      .about-logo, .about-text {
+        max-width: 100%;
+        flex: none;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav class="topnav">
-    <a href="index.html" class="active">Home</a>
+  <nav class="topnav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="active" aria-current="page">Home</a>
     <a href="links.html">Links</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
@@ -129,40 +173,40 @@
       <div class="hero-text">
         <h1>Your Personal Guide to High School Extracurriculars</h1>
         <p>Discover activities custom tailored to your interests through our extracurricular database to help you make the most out of high school.</p>
-        <a href="links.html" class="btn-primary">Get Started</a>
+        <a href="links.html" class="btn-primary" role="button" aria-label="Get Started exploring extracurriculars">Get Started</a>
       </div>
       <div class="hero-image">
         <!-- Replace with your own image or mockup -->
-        <img src="https://i.imgur.com/8p5YQeF.png" alt="EC Finder preview" style="max-width:300px; width:100%; border-radius: 20px;" />
+        <img src="https://i.imgur.com/8p5YQeF.png" alt="Preview screenshot of EC Finder platform" />
       </div>
     </section>
 
     <!-- Features section -->
-    <section class="features">
+    <section class="features" aria-label="Features of EC Finder">
       <div class="feature-card">
-        <img src="https://img.icons8.com/ios-filled/100/3367D6/hand.png" alt="Handpicked Activities" />
+        <img src="https://img.icons8.com/ios-filled/100/3367D6/hand.png" alt="Hand icon" />
         <h3>Handpicked Activities</h3>
         <p>All activities are handpicked by our team to offer a wide variety of options.</p>
       </div>
       <div class="feature-card">
-        <img src="https://img.icons8.com/ios-filled/100/3367D6/idea.png" alt="Customized Suggestions" />
+        <img src="https://img.icons8.com/ios-filled/100/3367D6/idea.png" alt="Lightbulb icon" />
         <h3>Customized Suggestions</h3>
         <p>Get personalized recommendations based on your interests and goals.</p>
       </div>
       <div class="feature-card">
-        <img src="https://img.icons8.com/ios-filled/100/3367D6/save--v1.png" alt="Save for Later" />
+        <img src="https://img.icons8.com/ios-filled/100/3367D6/save--v1.png" alt="Save icon" />
         <h3>Save for Later</h3>
         <p>Save your favorite activities to keep track and revisit later.</p>
       </div>
     </section>
 
     <!-- About section -->
-    <section class="about-section">
-      <div class="about-logo">Project:<br>Empower</div>
+    <section class="about-section" aria-label="About EC Finder and Project Empower">
+      <div class="about-logo" aria-hidden="true">Project:<br>Empower</div>
       <div class="about-text">
         <h2>About Us</h2>
         <p>EC Finder is a proud product of Project: Empower — a nonprofit dedicated to creating software that empowers students worldwide. We’re passionate about helping high school students find meaningful extracurriculars to boost skills and college applications.</p>
-        <a href="about.html" class="btn-primary">Learn More</a>
+        <a href="about.html" class="btn-primary" role="button" aria-label="Learn more about Project Empower">Learn More</a>
       </div>
     </section>
 
