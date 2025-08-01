@@ -197,6 +197,10 @@ a:hover, a:focus {
   background: var(--bg);
   max-width: calc(100% - 280px);
   margin-left: 280px;
+  display: flex;
+  flex-wrap: wrap;       /* Allow multiple cards per row */
+  gap: 24px 32px;        /* Vertical and horizontal spacing */
+  justify-content: flex-start; /* Align cards to start */
 }
 
 /* ===============================
@@ -230,28 +234,19 @@ a:hover, a:focus {
   background: var(--muted-bg);
   padding: 20px;
   border-radius: 12px;
-  margin-bottom: 24px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: 1px solid var(--border);
   cursor: pointer;
+
+  flex: 1 1 calc(33.33% - 32px);  /* 3 cards per row with gap */
+  min-width: 280px;                /* Minimum width to keep card readable */
+  box-sizing: border-box;
 }
 
 .ec-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-.ec-card h3 {
-  margin-top: 0;
-  font-size: 18px;
-  color: var(--text);
-}
-
-.ec-card p {
-  color: var(--text-muted);
-  font-size: 14px;
-  margin-bottom: 10px;
 }
 
 /* ===============================
