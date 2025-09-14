@@ -11,137 +11,221 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center; /* Center horizontally since no image */
-      padding: 40px 20px;
-      background: linear-gradient(120deg, #e0f2ff, #ffffff);
-      border-radius: 12px;
-      margin-bottom: 40px;
-      text-align: center; /* Center text */
+      justify-content: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px;
+      margin-bottom: 50px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
     }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      z-index: 1;
+    }
+    
     .hero-text {
       flex: 1 1 600px;
       max-width: 700px;
       padding: 0 20px;
+      position: relative;
+      z-index: 2;
     }
+    
     .hero-text h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      color: var(--primary);
-    }
-    .hero-text p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      color: var(--text-muted);
-    }
-    .btn-primary {
-      background: var(--primary);
+      font-size: 3.2rem;
+      margin-bottom: 24px;
       color: white;
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 1rem;
+      font-weight: 800;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      line-height: 1.2;
+    }
+    
+    .hero-text p {
+      font-size: 1.3rem;
+      margin-bottom: 35px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
       cursor: pointer;
       border: none;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
       text-decoration: none;
       display: inline-block;
+      box-shadow: 0 4px 15px rgba(238, 90, 36, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
+    
     .btn-primary:hover {
-      background: #274a8d;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(238, 90, 36, 0.6);
+      background: linear-gradient(45deg, #ee5a24, #ff6b6b);
     }
 
     .features {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      justify-content: center;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
+    
     .feature-card {
-      flex: 1 1 250px;
-      background: var(--muted-bg);
-      border-radius: 12px;
-      padding: 25px 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: white;
+      border-radius: 16px;
+      padding: 30px 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
       text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(102, 126, 234, 0.1);
     }
-    .feature-card img {
-      max-width: 80px;
-      margin-bottom: 20px;
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+    }
+    
     .feature-card h3 {
-      margin-bottom: 12px;
+      margin-bottom: 15px;
       color: var(--primary);
       font-weight: 700;
+      font-size: 1.3rem;
     }
+    
     .feature-card p {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 1rem;
+      line-height: 1.6;
     }
+    
     .about-section {
-      background: #e8f1ff;
-      border-radius: 12px;
-      padding: 40px 30px;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      border-radius: 20px;
+      padding: 50px 40px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 30px;
+      gap: 40px;
       justify-content: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
+      color: white;
+      position: relative;
+      overflow: hidden;
     }
+    
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      z-index: 1;
+    }
+    
     .about-logo {
-      flex: 0 0 150px;
-      max-width: 150px;
-      border: 2px solid var(--primary);
-      border-radius: 10px;
-      padding: 15px;
+      flex: 0 0 160px;
+      max-width: 160px;
+      border: 3px solid white;
+      border-radius: 20px;
+      padding: 20px;
       text-align: center;
-      font-family: monospace, monospace;
-      font-weight: 700;
-      color: var(--primary);
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      color: white;
       user-select: none;
-      font-size: 1.2rem;
-      line-height: 1.4;
+      font-size: 1.4rem;
+      line-height: 1.3;
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.1);
     }
+    
     .about-text {
-      flex: 1 1 350px;
+      flex: 1 1 400px;
       max-width: 600px;
+      position: relative;
+      z-index: 2;
     }
+    
     .about-text h2 {
-      color: var(--primary);
-      margin-bottom: 12px;
+      color: white;
+      margin-bottom: 16px;
+      font-size: 2.2rem;
+      font-weight: 800;
     }
+    
     .about-text p {
-      color: var(--text-muted);
-      font-size: 1rem;
-      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      line-height: 1.7;
     }
 
     /* Responsive adjustments */
     @media (max-width: 800px) {
       .hero {
-        flex-direction: column;
-        padding: 30px 15px;
-        text-align: center;
+        padding: 40px 20px;
       }
-      .hero-text {
-        padding: 0;
-        max-width: 100%;
+      
+      .hero-text h1 {
+        font-size: 2.4rem;
       }
+      
+      .hero-text p {
+        font-size: 1.1rem;
+      }
+      
       .features {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
-      .feature-card {
-        max-width: 90%;
-      }
+      
       .about-section {
         flex-direction: column;
-        padding: 30px 15px;
+        padding: 40px 20px;
+        text-align: center;
       }
-      .about-logo, .about-text {
-        max-width: 100%;
+      
+      .about-logo {
         flex: none;
+      }
+      
+      .about-text h2 {
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -155,12 +239,11 @@
   </nav>
 
   <main class="content">
-
     <!-- Hero section -->
     <section class="hero">
       <div class="hero-text">
         <h1>Your Personal Guide to High School Extracurriculars</h1>
-        <p>Discover activities custom tailored to your interests through our extracurricular database to help you make the most out of high school.</p>
+        <p>Discover activities custom tailored to your interests through our comprehensive extracurricular database to help you make the most out of high school.</p>
         <a href="links.html" class="btn-primary" role="button" aria-label="Get Started exploring extracurriculars">Get Started</a>
       </div>
     </section>
@@ -168,19 +251,22 @@
     <!-- Features section -->
     <section class="features" aria-label="Features of EC Finder">
       <div class="feature-card">
-        <img src="https://img.icons8.com/ios-filled/100/3367D6/hand.png" alt="Hand icon" />
+        <!-- Replaced external image with icon using emoji/symbol -->
+        <div class="feature-icon">🎯</div>
         <h3>Handpicked Activities</h3>
-        <p>All activities are handpicked by our team to offer a wide variety of options.</p>
+        <p>All activities are carefully curated by our team to offer a diverse range of high-quality opportunities for every interest.</p>
       </div>
       <div class="feature-card">
-        <img src="https://img.icons8.com/ios-filled/100/3367D6/idea.png" alt="Lightbulb icon" />
+        <!-- Replaced external image with icon using emoji/symbol -->
+        <div class="feature-icon">💡</div>
         <h3>Customized Suggestions</h3>
-        <p>Get personalized recommendations based on your interests and goals.</p>
+        <p>Get personalized recommendations based on your academic interests, career goals, and available time commitment.</p>
       </div>
       <div class="feature-card">
-        <img src="https://img.icons8.com/ios-filled/100/3367D6/save--v1.png" alt="Save icon" />
+        <!-- Replaced external image with icon using emoji/symbol -->
+        <div class="feature-icon">❤️</div>
         <h3>Save for Later</h3>
-        <p>Save your favorite activities to keep track and revisit later.</p>
+        <p>Bookmark your favorite activities and build a personalized collection to revisit and apply to when ready.</p>
       </div>
     </section>
 
@@ -189,11 +275,10 @@
       <div class="about-logo" aria-hidden="true">EC<br>Finder</div>
       <div class="about-text">
         <h2>About Us</h2>
-        <p>EC Finder is a nonprofit dedicated to helping high school students find meaningful extracurriculars to boost skills and college applications.</p>
+        <p>EC Finder is a nonprofit organization dedicated to helping high school students discover meaningful extracurricular opportunities that enhance their skills, build their college applications, and foster personal growth.</p>
         <a href="about.html" class="btn-primary" role="button" aria-label="Learn more about EC Finder">Learn More</a>
       </div>
     </section>
-
   </main>
 </body>
 </html>
