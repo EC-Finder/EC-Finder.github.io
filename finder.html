@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EC Finder</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top Navigation -->
+  <nav class="topnav">
+  <a href="index.html" class="active">Home</a>
+  <a href="links.html">Links</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>ECFinder</h1>
+      </div>
+
+      <!-- Section Groups -->
+      <section class="section">
+        <h3 onclick="toggleSection(this)">Math/Science <span>▼</span></h3>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" value="Mathematics"> Mathematics</label>
+          <label class="checkbox-label"><input type="checkbox" value="Statistics"> Statistics</label>
+          <label class="checkbox-label"><input type="checkbox" value="Physics"> Physics</label>
+          <label class="checkbox-label"><input type="checkbox" value="Chemistry"> Chemistry</label>
+          <label class="checkbox-label"><input type="checkbox" value="Biology"> Biology</label>
+          <label class="checkbox-label"><input type="checkbox" value="Applied Math"> Applied Math</label>
+          <label class="checkbox-label"><input type="checkbox" value="Neuroscience"> Neuroscience</label>
+          <label class="checkbox-label"><input type="checkbox" value="Genetics"> Genetics</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 onclick="toggleSection(this)">Engineering & Tech <span>▼</span></h3>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" value="Computer Science"> Computer Science</label>
+          <label class="checkbox-label"><input type="checkbox" value="Cybersecurity"> Cybersecurity</label>
+          <label class="checkbox-label"><input type="checkbox" value="Robotics"> Robotics</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 onclick="toggleSection(this)">Business/Social Sci <span>▼</span></h3>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" value="Economics"> Economics</label>
+          <label class="checkbox-label"><input type="checkbox" value="Finance"> Finance</label>
+          <label class="checkbox-label"><input type="checkbox" value="Political Science"> Political Science</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 onclick="toggleSection(this)">Arts/Humanities <span>▼</span></h3>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" value="Writing"> Writing</label>
+          <label class="checkbox-label"><input type="checkbox" value="Foreign Language"> Foreign Language</label>
+          <label class="checkbox-label"><input type="checkbox" value="History"> History</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 onclick="toggleSection(this)">Grade <span>▼</span></h3>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" value="Freshman"> Freshman</label>
+          <label class="checkbox-label"><input type="checkbox" value="Sophomore"> Sophomore</label>
+          <label class="checkbox-label"><input type="checkbox" value="Junior"> Junior</label>
+          <label class="checkbox-label"><input type="checkbox" value="Senior"> Senior</label>
+        </div>
+      </section>
+
+      <section class="section">
+  <h3 onclick="toggleSection(this)">Deadline Month <span>▼</span></h3>
+  <div class="checkbox-group">
+    <label class="checkbox-label"><input type="checkbox" value="January"> January</label>
+    <label class="checkbox-label"><input type="checkbox" value="February"> February</label>
+    <label class="checkbox-label"><input type="checkbox" value="March"> March</label>
+    <label class="checkbox-label"><input type="checkbox" value="April"> April</label>
+    <label class="checkbox-label"><input type="checkbox" value="May"> May</label>
+    <label class="checkbox-label"><input type="checkbox" value="June"> June</label>
+    <label class="checkbox-label"><input type="checkbox" value="July"> July</label>
+    <label class="checkbox-label"><input type="checkbox" value="August"> August</label>
+    <label class="checkbox-label"><input type="checkbox" value="September"> September</label>
+    <label class="checkbox-label"><input type="checkbox" value="October"> October</label>
+    <label class="checkbox-label"><input type="checkbox" value="November"> November</label>
+    <label class="checkbox-label"><input type="checkbox" value="December"> December</label>
+  </div>
+</section>
+
+
+      <section class="section">
+        <h3 onclick="toggleSection(this)">Other <span>▼</span></h3>
+        <div class="checkbox-group">
+          <label class="checkbox-label"><input type="checkbox" value="Virtual"> Virtual</label>
+          <label class="checkbox-label"><input type="checkbox" value="Free"> Free</label>
+          <label class="checkbox-label"><input type="checkbox" value="Summer"> Summer</label>
+          <label class="checkbox-label"><input type="checkbox" value="Paid"> Paid</label>
+          <label class="checkbox-label"><input type="checkbox" value="Internship"> Internship</label>
+          <label class="checkbox-label"><input type="checkbox" value="Competition"> Competition</label>
+          <label class="checkbox-label"><input type="checkbox" value="Community Service"> Community Service</label>
+          <label class="checkbox-label"><input type="checkbox" value="STEM"> STEM</label>
+          <label class="checkbox-label"><input type="checkbox" value="Research"> Research</label>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="search-only-container">
+        <input type="text" id="searchBox" placeholder="Search for Extracurriculars..." />
+        <label class="liked-toggle">
+          <input type="checkbox" id="likedOnly" />
+          Show Liked Ones Only
+        </label>
+      </div>
+
+      <!-- Added results counter for better UX -->
+      <div id="results-counter" style="text-align: center; margin-bottom: 20px; font-weight: 600; color: var(--text-muted);"></div>
+
+      <section id="ecContainer">
+
+  <div class="ec-card" data-tags="Mathematics Competition September" data-url="https://mualphatheta.org/">
+    <div class="card-header">
+      <h3>Mu Alpha Theta</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>A national math honor society with competitions and leadership roles.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Competition</span><span>September</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Summer Paid July" data-url="https://rossprogram.org/">
+    <div class="card-header">
+      <h3>Ross Mathematics Program</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>Intensive summer program focused on number theory and proofs.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Summer</span><span>Paid</span><span>July</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Competition May" data-url="https://www.arml.com/">
+    <div class="card-header">
+      <h3>ARML</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>American Regions Mathematics League – a team-based competition covering algebra, geometry, number theory, and more.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Competition</span><span>May</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Competition STEM February" data-url="https://m3challenge.siam.org/">
+    <div class="card-header">
+      <h3>MathWorks Math Modeling Challenge</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>14-hour real-world modeling challenge for high school teams with scholarships and national recognition.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Competition</span><span>STEM</span><span>February</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Competition March" data-url="https://www.mathcounts.org/">
+    <div class="card-header">
+      <h3>Mathcounts</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>Nationwide competition program for middle and early high school students focusing on problem-solving speed and accuracy.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Competition</span><span>March</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Summer STEM July" data-url="https://cosmos-ucop.ucdavis.edu/">
+    <div class="card-header">
+      <h3>COSMOS</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>California State Summer School for Math & Science offers intensive math/STEM experiences for high schoolers.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Summer</span><span>STEM</span><span>July</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Competition March" data-url="https://www.maa.org/math-competitions">
+    <div class="card-header">
+      <h3>Math Olympiad / Math League</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>National and international competitions such as AMC, AIME, and Olympiad-level problem solving.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Competition</span><span>March</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Year-round" data-url="https://mathcircles.org/">
+    <div class="card-header">
+      <h3>Math Circles / Math Club</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>Math circles and clubs engage students in creative problem-solving, enrichment, and competition prep.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Year-round</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Virtual Research Year-round" data-url="https://artofproblemsolving.com/">
+    <div class="card-header">
+      <h3>AoPS / BEAM</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>Art of Problem Solving and BEAM offer advanced online courses and mentorship for underserved math students.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Virtual</span><span>Research</span><span>Year-round</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Competition March" data-url="https://www.maa.org/math-competitions/aime">
+    <div class="card-header">
+      <h3>AIME (American Invitational Mathematics Examination)</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>Second-level invitational exam following AMC for advanced problem-solving skills.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Competition</span><span>March</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Competition February" data-url="https://amc.maa.org/usa-jmo">
+    <div class="card-header">
+      <h3>USA Junior Mathematical Olympiad (USAJMO)</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>US junior division Olympiad for younger high school students with challenging problems.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Competition</span><span>February</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Competition March April" data-url="https://www.mathleague.org/">
+    <div class="card-header">
+      <h3>Math League</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>Math competition for middle and high school students emphasizing speed and accuracy.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Competition</span><span>March</span><span>April</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Summer STEM June July" data-url="https://www.rmf.org/programs/mathcamp/">
+    <div class="card-header">
+      <h3>Ross Mathematics Camp</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>Highly selective summer camp for talented math students focusing on advanced topics.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Summer</span><span>STEM</span><span>June</span><span>July</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Research Year-round" data-url="https://mathcircles.org/">
+    <div class="card-header">
+      <h3>Math Circles Programs</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>Local math clubs that focus on problem solving and mathematical exploration throughout the year.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Research</span><span>Year-round</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Competition January" data-url="https://hmmt.org/">
+    <div class="card-header">
+      <h3>Harvard-MIT Math Tournament (HMMT)</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>One of the largest and most prestigious high school math competitions held annually.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Competition</span><span>January</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Competition February March" data-url="https://cemc.uwaterloo.ca/contests/">
+    <div class="card-header">
+      <h3>Pascal, Cayley & Fermat Math Competitions</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>Series of math competitions hosted by the University of Waterloo for different grade levels.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Competition</span><span>February</span><span>March</span>
+    </div>
+  </div>
+
+  <div class="ec-card" data-tags="Mathematics Competition April May" data-url="https://www.usamts.org/">
+    <div class="card-header">
+      <h3>USA Mathematical Talent Search (USAMTS)</h3>
+      <button class="like-btn" aria-label="Like this card">♡</button>
+    </div>
+    <p>Long-term math problem-solving contest designed to encourage deep mathematical thinking.</p>
+    <div class="tags">
+      <span>Mathematics</span><span>Competition</span><span>April</span><span>May</span>
+    </div>
+  </div>
+<div class="ec-card" data-tags="Mathematics Competition June" data-url="https://www.imo-official.org/">
+  <div class="card-header">
+    <h3>International Mathematical Olympiad (IMO)</h3>
+    <button class="like-btn" aria-label="Like this card">♡</button>
+  </div>
+  <p>World championship math competition for top pre-college students. U.S. participants qualify via USAMO and MOP.</p>
+  <div class="tags">
+    <span>Mathematics</span><span>Competition</span><span>June</span>
+  </div>
+</div>
+
+<div class="ec-card" data-tags="Mathematics Research Summer" data-url="https://www.mathcamp.org/">
+  <div class="card-header">
+    <h3>Canada/USA Mathcamp</h3>
+    <button class="like-btn" aria-label="Like this card">♡</button>
+  </div>
+  <p>Intensive 5-week summer program for mathematically talented high school students. Includes lectures, research, and exploration.</p>
+  <div class="tags">
+    <span>Mathematics</span><span>Research</span><span>Summer</span>
+  </div>
+</div>
+
+<div class="ec-card" data-tags="Mathematics Summer Research July" data-url="https://math.berkeley.edu/programs/summer/math-summer-research-institute">
+  <div class="card-header">
+    <h3>Berkeley Math Summer Research Institute (MSRI-UP)</h3>
+    <button class="like-btn" aria-label="Like this card">♡</button>
+  </div>
+  <p>Advanced summer research program hosted by UC Berkeley for underrepresented students in mathematics.</p>
+  <div class="tags">
+    <span>Mathematics</span><span>Research</span><span>Summer</span><span>July</span>
+  </div>
+</div>
+
+<div class="ec-card" data-tags="Mathematics Competition January" data-url="https://hmmtonline.org/">
+  <div class="card-header">
+    <h3>Harvard-MIT Mathematics Tournament Online (HMMT Online)</h3>
+    <button class="like-btn" aria-label="Like this card">♡</button>
+  </div>
+  <p>Internationally recognized online version of HMMT for students unable to attend in person. Features proof and team rounds.</p>
+  <div class="tags">
+    <span>Mathematics</span><span>Competition</span><span>January</span>
+  </div>
+</div>
+
+<div class="ec-card" data-tags="Mathematics Competition April" data-url="https://purplecomet.org/">
+  <div class="card-header">
+    <h3>Purple Comet! Math Meet</h3>
+    <button class="like-btn" aria-label="Like this card">♡</button>
+  </div>
+  <p>Free, team-based international online math competition for middle and high school students. Timed and proof-based.</p>
+  <div class="tags">
+    <span>Mathematics</span><span>Competition</span><span>April</span>
+  </div>
+</div>
+
+</section>
+
+
+      
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
