@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - EC Finder</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: #f8f9fa;
+      color: #1a1a1a;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .topnav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0;
+    }
+
+    .topnav a {
+      color: rgba(0, 0, 0, 0.7);
+      padding: 20px 24px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+    }
+
+    .topnav a:hover, .topnav a.active {
+      color: #00cc6a;
+      border-bottom-color: #00cc6a;
+    }
+
+    .content {
+      margin-top: 80px;
+      padding: 0;
+    }
+
+    .about-hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 5%;
+      background: radial-gradient(ellipse at top, rgba(0, 204, 106, 0.08) 0%, transparent 50%);
+      text-align: center;
+    }
+
+    .about-hero-content {
+      max-width: 800px;
+    }
+
+    .about-badge {
+      display: inline-block;
+      background: rgba(0, 204, 106, 0.1);
+      color: #00994d;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      border: 1px solid rgba(0, 204, 106, 0.3);
+    }
+
+    .about-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin: 0 0 24px 0;
+      background: linear-gradient(135deg, #1a1a1a 0%, #00994d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .about-hero p {
+      font-size: 1.3rem;
+      color: rgba(0, 0, 0, 0.7);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .about-section {
+      padding: 80px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-section h2 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 32px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #00994d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      color: rgba(0, 0, 0, 0.7);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .creator-card {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      padding: 48px;
+      margin-top: 48px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .creator-card:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .creator-card h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+
+    .creator-card .subtitle {
+      font-size: 1.2rem;
+      color: #00994d;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .creator-card p {
+      font-size: 1.1rem;
+      color: rgba(0, 0, 0, 0.7);
+      line-height: 1.8;
+    }
+
+    .interests {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .interest-tag {
+      background: rgba(0, 204, 106, 0.1);
+      color: #00994d;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid rgba(0, 204, 106, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .about-hero {
+        padding: 60px 5%;
+      }
+
+      .about-section {
+        padding: 60px 5%;
+      }
+
+      .creator-card {
+        padding: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="topnav" role="navigation" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="links.html">Discover</a>
+    <a href="about.html" class="active" aria-current="page">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main class="content">
+    <section class="about-hero">
+      <div class="about-hero-content">
+        <div class="about-badge">About EC Finder</div>
+        <h1>Empowering Students to Discover Their Path</h1>
+        <p>EC Finder was created to help high school students navigate the overwhelming world of extracurricular opportunities and find activities that truly match their interests and goals.</p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>Our Mission</h2>
+      <p>We believe every student deserves access to opportunities that can help them grow, learn, and pursue their passions. EC Finder simplifies the search process by organizing hundreds of competitions, programs, internships, and awards into one easy-to-use platform.</p>
+      <p>Whether you're interested in STEM, arts, humanities, or community service, EC Finder helps you discover opportunities that align with your grade level, interests, and schedule.</p>
+
+      <div class="creator-card">
+        <h3>Dylan Chandran</h3>
+        <div class="subtitle">Creator & Developer</div>
+        <p>Dylan Chandran is a sophomore at Monte Vista High School with a passion for computer science and linguistics. Recognizing the challenge students face in finding meaningful extracurricular activities, Dylan created EC Finder to make the discovery process easier and more accessible for everyone.</p>
+        <div class="interests">
+          <span class="interest-tag">Computer Science</span>
+          <span class="interest-tag">Linguistics</span>
+          <span class="interest-tag">Web Development</span>
+          <span class="interest-tag">Education</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
