@@ -8,8 +8,8 @@
   <style>
     /* Dark modern theme inspired by Studio Herrstrom */
     body {
-      background: #0a0a0a;
-      color: #ffffff;
+      background: #f8f9fa;
+      color: #1a1a1a;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 0;
@@ -17,9 +17,9 @@
     }
 
     .topnav {
-      background: rgba(10, 10, 10, 0.95);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       position: fixed;
       top: 0;
       width: 100%;
@@ -28,7 +28,7 @@
     }
 
     .topnav a {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
       padding: 20px 24px;
       text-decoration: none;
       display: inline-block;
@@ -38,8 +38,8 @@
     }
 
     .topnav a:hover, .topnav a.active {
-      color: #00ff88;
-      border-bottom-color: #00ff88;
+      color: #00cc6a;
+      border-bottom-color: #00cc6a;
     }
 
     .content {
@@ -55,8 +55,8 @@
       align-items: center;
       padding: 0 5%;
       position: relative;
-      background: radial-gradient(ellipse at top left, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
-                  radial-gradient(ellipse at bottom right, rgba(255, 0, 136, 0.1) 0%, transparent 50%);
+      background: radial-gradient(ellipse at top left, rgba(0, 204, 106, 0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at bottom right, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
     }
 
     .hero-content {
@@ -67,14 +67,14 @@
 
     .hero-badge {
       display: inline-block;
-      background: rgba(0, 255, 136, 0.1);
-      color: #00ff88;
+      background: rgba(0, 204, 106, 0.1);
+      color: #00994d;
       padding: 8px 16px;
       border-radius: 20px;
       font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 24px;
-      border: 1px solid rgba(0, 255, 136, 0.2);
+      border: 1px solid rgba(0, 204, 106, 0.3);
     }
 
     .hero h1 {
@@ -82,7 +82,7 @@
       font-weight: 900;
       line-height: 1.1;
       margin: 0 0 24px 0;
-      background: linear-gradient(135deg, #ffffff 0%, #00ff88 100%);
+      background: linear-gradient(135deg, #1a1a1a 0%, #00994d 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -90,7 +90,7 @@
 
     .hero-subtitle {
       font-size: 1.4rem;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
       margin-bottom: 40px;
       line-height: 1.5;
       max-width: 500px;
@@ -103,8 +103,8 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
-      color: #0a0a0a;
+      background: linear-gradient(135deg, #00cc6a 0%, #00994d 100%);
+      color: #ffffff;
       padding: 16px 32px;
       border-radius: 12px;
       font-weight: 700;
@@ -114,31 +114,31 @@
       transition: all 0.3s ease;
       text-decoration: none;
       display: inline-block;
-      box-shadow: 0 8px 32px rgba(0, 255, 136, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 204, 106, 0.3);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(0, 255, 136, 0.4);
+      box-shadow: 0 12px 40px rgba(0, 204, 106, 0.4);
     }
 
     .btn-secondary {
       background: transparent;
-      color: #ffffff;
+      color: #1a1a1a;
       padding: 16px 32px;
       border-radius: 12px;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
       text-decoration: none;
       display: inline-block;
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.4);
     }
 
     /* Visual element */
@@ -158,8 +158,8 @@
     }
 
     .visual-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.1);
       border-radius: 12px;
       padding: 20px;
       text-align: center;
@@ -168,8 +168,9 @@
     }
 
     .visual-card:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 1);
       transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
 
     .visual-card .icon {
@@ -180,16 +181,16 @@
 
     .visual-card .label {
       font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
       font-weight: 500;
     }
 
     /* Stats section */
     .stats-section {
       padding: 80px 5%;
-      background: rgba(255, 255, 255, 0.02);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.02);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .stats-grid {
@@ -207,13 +208,13 @@
     .stat-number {
       font-size: 3rem;
       font-weight: 900;
-      color: #00ff88;
+      color: #00994d;
       display: block;
       margin-bottom: 8px;
     }
 
     .stat-label {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
       font-size: 1rem;
       font-weight: 500;
     }
@@ -232,7 +233,7 @@
       font-size: 3rem;
       font-weight: 900;
       margin-bottom: 16px;
-      background: linear-gradient(135deg, #ffffff 0%, #00ff88 100%);
+      background: linear-gradient(135deg, #1a1a1a 0%, #00994d 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -240,7 +241,7 @@
 
     .section-subtitle {
       font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
       max-width: 600px;
       margin: 0 auto;
     }
@@ -254,8 +255,8 @@
     }
 
     .feature-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.1);
       border-radius: 20px;
       padding: 40px 32px;
       transition: all 0.3s ease;
@@ -263,15 +264,16 @@
     }
 
     .feature-card:hover {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 1);
       transform: translateY(-8px);
-      border-color: rgba(0, 255, 136, 0.3);
+      border-color: rgba(0, 204, 106, 0.3);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
     }
 
     .feature-icon {
       width: 60px;
       height: 60px;
-      background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+      background: linear-gradient(135deg, #00cc6a 0%, #00994d 100%);
       border-radius: 16px;
       display: flex;
       align-items: center;
@@ -284,11 +286,11 @@
       font-size: 1.4rem;
       font-weight: 700;
       margin-bottom: 16px;
-      color: #ffffff;
+      color: #1a1a1a;
     }
 
     .feature-card p {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
       line-height: 1.6;
       font-size: 1rem;
     }
@@ -402,7 +404,7 @@
     <section class="features-section">
       <div class="section-header">
         <h2 class="section-title">Why Choose EC Finder?</h2>
-        <p class="section-subtitle">We've reimagined how students discover and connect with meaningful opportunities</p>
+        <p class="section-subtitle">EC Finder is the best extracurricular finder that can help you find organizations, competitions, awards, and programs that you can do.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
